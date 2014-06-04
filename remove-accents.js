@@ -38,6 +38,7 @@ fs.stat(path, function (err, stats) {
             }
             var text = iconv.convert(data).toString();
             
+            // ... and remove all accents of them.
             fs.writeFile(path + file.split('.srt').join('') + '_NEW.srt',
                          removeAccents(text),
                          function (err) {
