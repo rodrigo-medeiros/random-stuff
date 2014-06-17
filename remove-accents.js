@@ -1,5 +1,5 @@
-var fs = require('fs')
-  , Iconv = require('iconv').Iconv;
+var fs = require('fs'),
+    Iconv = require('iconv').Iconv;
 
 var path = process.argv[2];
 var iconv = new Iconv('ISO-8859-1', 'UTF-8');
@@ -54,16 +54,16 @@ fs.stat(path, function (err, stats) {
 
 // A simple function to remove accents
 function removeAccents(strAccents) {
-  var strAccents = strAccents.split('')
-    , strAccentsOut = new Array()
-    , strAccentsLen = strAccents.length
-    , accents = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž'
-    , accentsOut = "AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZz";
+  var strAccentsArr = strAccents.split(''),
+      strAccentsOut = [],
+      strAccentsLen = strAccentsArr.length,
+      accents = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž',
+      accentsOut = "AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZz";
   for (var y = 0; y < strAccentsLen; y++) {
-    if (accents.indexOf(strAccents[y]) != -1) {
-      strAccentsOut[y] = accentsOut.substr(accents.indexOf(strAccents[y]), 1);
+    if (accents.indexOf(strAccentsArr[y]) != -1) {
+      strAccentsOut[y] = accentsOut.substr(accents.indexOf(strAccentsArr[y]), 1);
     } else {
-      strAccentsOut[y] = strAccents[y];
+      strAccentsOut[y] = strAccentsArr[y];
     }
   }
   strAccentsOut = strAccentsOut.join('');
