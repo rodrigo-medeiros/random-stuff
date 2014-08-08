@@ -1,8 +1,10 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
+    expressValidator = require('express-validator'),
     app = express();
 
 app.use(bodyParser.json());
+app.use(expressValidator());
 
 app.post('/', function (req, res) {
   console.log(req.body);
