@@ -10,7 +10,10 @@ app.use(expressValidator());
 app.post('/', function (req, res) {
 
   req.checkBody('name', 'Missing params...').notEmpty();
-  req.checkBody('products'[0], 'Name is required').notEmpty();
+  var products = req.body.products;
+  products.forEach(function (item) {
+    req.checkBody('quantity', 'Must be an integer...').isInt();
+  });
 
   var errors = req.validationErrors();
 
@@ -19,7 +22,8 @@ app.post('/', function (req, res) {
     return;
   }
   res.json({
-    name: req.name
+    name: req.body.name,
+    products: req.body.products
   });
 });
 
