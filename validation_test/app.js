@@ -10,10 +10,7 @@ app.use(expressValidator());
 app.post('/', function (req, res) {
 
   req.checkBody('name', 'Missing params...').notEmpty();
-  var products = req.body.products;
-  products.forEach(function (item) {
-    req.checkBody('quantity', 'Must be an integer...').isInt();
-  });
+  req.checkBody(['products', 0,  'quantity'],  'Must be an integer...').isAlpha();
 
   var errors = req.validationErrors();
 
