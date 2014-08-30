@@ -6,4 +6,10 @@ app.get('/:test', function(req, res){
   res.send(JSON.stringify(res.params));
 });
 
+app.get('/', function (req, res) {
+  var message = 'Hello dude!';
+  console.log(message);
+  res.send(message);
+});
+
 app.listen(3000);
