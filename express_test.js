@@ -1,15 +1,19 @@
-var express = require( 'express' );
+var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 
-app.get('/:test', function(req, res){
-  console.log( "hello word: " + JSON.stringify(req.params) );
-  res.send(JSON.stringify(res.params));
-});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
-  var message = 'Hello dude!';
-  console.log(message);
-  res.send(message);
+  var params = req.params;
+  if (req.params.mydata === 'content') {
+    console.log('foo');
+    res.json({ message: 'you sent content.' });
+  } else {
+    console.log(params);
+    res.json({ message: 'you sent something else.' });
+  }
 });
 
 app.listen(3000);
