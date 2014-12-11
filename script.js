@@ -1,9 +1,8 @@
 function makeAjaxRequest () {
   $.ajax({
-//    url: 'http://127.0.0.1:3000',
-    url: 'http://api.joind.in/v2.1/talks/10889',
+    url: 'http://127.0.0.1:3000/',
     data: {
-      mydata: "json"
+      mydata: "content"
     },
     dataType: 'jsonp',
     success: function (json) {
@@ -13,5 +12,11 @@ function makeAjaxRequest () {
       console.log(error);
     },
     type: 'GET'
+  });
+}
+
+function makeAjaxGetRequest () {
+  $.get('localhost:3000', { mydata: 'content' }, function (response) {
+    console.log(response);
   });
 }
