@@ -1,10 +1,7 @@
 function makeAjaxRequest () {
   $.ajax({
-    url: 'http://127.0.0.1:3000/',
-    data: {
-      mydata: "content"
-    },
-    dataType: 'jsonp',
+    url: 'http://loalhost:3000/api/user/5490dabad8b70c591a2d67e9',
+    dataType: 'json',
     success: function (json) {
       console.log(json);
     },
