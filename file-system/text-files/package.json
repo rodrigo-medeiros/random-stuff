@@ -1,0 +1,29 @@
+{
+  "name": "coderbits",
+  "version": "0.1.11",
+  "description": "A wrapper for the coderbits API",
+  "author": "Rodrigo Medeiros <rodrigo.mangue@gmail.com> (https://coderbits.com/rodrigomangue)",
+  "repository": "rodrigo-medeiros/coderbits",
+  "engines": {
+    "node" : ">=0.12.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/rodrigo-medeiros/coderbits/LICENSE"
+    }
+  ],
+  "main": "coderbits.js",
+  "scripts": {
+    "test": "mocha test/"
+  },
+  "keywords": [
+    "coderbits",
+    "api",
+    "wrapper"
+  ],
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "expect.js": "^0.3.1"
+  }
+}

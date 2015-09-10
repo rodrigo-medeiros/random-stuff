@@ -1,0 +1,66 @@
+[
+  {
+    "name": "CS101",
+    "duration": 12,
+    "disciplines": [
+      {
+        "name": "Algorithms",
+        "books": [
+          {
+            "name": "Book One",
+            "author": "John"
+          },
+          {
+            "name": "Book Three",
+            "author": "Mary"
+          }
+        ]
+      },
+      {
+        "name": "Web Development",
+        "books": [
+          {
+            "name": "Book Two",
+            "author": "Mark"
+          },
+          {
+            "name": "Book Four",
+            "author": "Olaf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "CS202",
+    "duration": 12,
+    "disciplines": [
+      {
+        "name": "Databases",
+        "books": [
+          {
+            "name": "Book Seven",
+            "author": "John"
+          },
+          {
+            "name": "Book Ten",
+            "author": "Sofia"
+          }
+        ]
+      },
+      {
+        "name": "Software Engineering",
+        "books": [
+          {
+            "name": "Book Twelve",
+            "author": "Mark"
+          },
+          {
+            "name": "Book Six",
+            "author": "Olaf"
+          }
+        ]
+      }
+    ]
+  }
+]
